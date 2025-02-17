@@ -3,6 +3,38 @@ import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Award, CheckCircle, Target, Users, Heart, Shield, ArrowRight } from "lucide-react";
+import { Stats } from "@/components/stats";
+import { FAQ } from "@/components/faq";
+
+const stats = [
+  { label: "Years Experience", value: "10+" },
+  { label: "Professional Staff", value: "50+" },
+  { label: "Service Users", value: "100+" },
+  { label: "Locations", value: "5+" },
+];
+
+const faqs = [
+  {
+    question: "What is supported living?",
+    answer: "Supported living is a service that helps adults with various needs to live independently in their own home. We provide personalized support that ranges from a few hours a week to 24/7 care, depending on individual needs.",
+  },
+  {
+    question: "Are you CQC registered?",
+    answer: "Yes, JARV Consulting is fully registered with the Care Quality Commission (CQC), which means we meet all the necessary standards for providing safe, effective, and high-quality care services.",
+  },
+  {
+    question: "What areas do you cover?",
+    answer: "We currently provide services in the Greater Manchester area, with a focus on Bolton and surrounding areas. We're continuously expanding our reach to help more people access quality supported living services.",
+  },
+  {
+    question: "How do I access your services?",
+    answer: "You can access our services through various routes, including direct referrals, local authority referrals, or by contacting us directly. We'll arrange an initial assessment to understand your needs and discuss how we can best support you.",
+  },
+  {
+    question: "What training do your staff receive?",
+    answer: "All our staff undergo comprehensive training including first aid, safeguarding, medication management, and person-centered care. We ensure continuous professional development to maintain the highest standards of care.",
+  },
+];
 
 export default function AboutPage() {
   return (
@@ -127,26 +159,10 @@ export default function AboutPage() {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24">
-        <div className="container">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              { label: "Years Experience", value: "10+" },
-              { label: "Professional Staff", value: "50+" },
-              { label: "Service Users", value: "100+" },
-              { label: "Locations", value: "5+" },
-            ].map((stat, index) => (
-              <div
-                key={index}
-                className="text-center p-8 rounded-2xl bg-primary/5 border-2 border-primary/10"
-              >
-                <div className="text-4xl font-bold text-primary mb-2">{stat.value}</div>
-                <div className="text-sm text-muted-foreground">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      {/* <Stats stats={stats} /> */}
+
+      {/* FAQ Section */}
+      <FAQ faqs={faqs} />
 
       {/* CTA Section */}
       <section className="py-24 bg-muted">
