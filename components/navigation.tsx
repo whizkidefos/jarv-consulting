@@ -5,13 +5,13 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
-import { HomeIcon, Phone, Menu, X } from "lucide-react";
+import { Phone, Menu, X } from "lucide-react";
+import Image from "next/image";
 
 const routes = [
   {
     href: "/",
     label: "Home",
-    icon: HomeIcon,
   },
   {
     href: "/services",
@@ -36,7 +36,9 @@ export function Navigation() {
       <div className="container flex h-16 items-center justify-between">
         <div className="flex items-center">
           <Link href="/" className="flex items-center space-x-2">
-            <HomeIcon className="h-6 w-6 text-primary" />
+            <div className="relative w-6 h-6">
+              <Image src="/favicon.svg" alt="JARV Logo" width={24} height={24} />
+            </div>
             <span className="font-bold">JARV Consulting</span>
           </Link>
         </div>
